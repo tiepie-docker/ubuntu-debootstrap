@@ -52,6 +52,22 @@ sudo chown -R "$(id -u):$(id -g)" "$dir"
 xz -d < $dir/rootfs.tar.xz | gzip -c > $dir/rootfs.tar.gz
 sed -i /^ENV/d "${dir}/Dockerfile"
 echo "ENV ARCH=${UNAME_ARCH} UBUNTU_SUITE=${SUITE} DOCKER_REPO=${DOCKER_REPO}" >> "${dir}/Dockerfile"
+cat >> "${dir}/Dockerfile" <<EOF
+RUN if [ ! -s /etc/apt/sources.list ]; then \
+      case "${ARCH}" in \
+      amd64|i386) \
+            echo "deb http://archive.ubuntu.com/ubuntu ${SUITE} main universe" > /etc/apt/sources.list; \
+            echo "deb http://archive.ubuntu.com/ubuntu ${SUITE}-updates main universe" >> /etc/apt/sources.list; \
+            echo "deb http://archive.ubuntu.com/ubuntu ${SUITE}-security main universe" >> /etc/apt/sources.list; \
+            ;; \
+      *) \
+            echo "deb http://ports.ubuntu.com/ubuntu-ports ${SUITE} main universe" > /etc/apt/sources.list; \
+            echo "deb http://ports.ubuntu.com/ubuntu-ports ${SUITE}-updates main universe" >> /etc/apt/sources.list; \
+            echo "deb http://ports.ubuntu.com/ubuntu-ports ${SUITE}-security main universe" >> /etc/apt/sources.list; \
+            ;; \
+      esac; \
+    fi
+EOF
 
 if [ "$DOCKER_REPO" ]; then
     docker build -t "${DOCKER_REPO}:${ARCH}-${SUITE}-slim" "${dir}"
