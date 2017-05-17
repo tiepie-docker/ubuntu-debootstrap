@@ -1,0 +1,12 @@
+make
+python
+python-colorama
+pep8
+g++
+flex
+bison
+openssh-client
+rsync
+libz-dev
+php-cli
+

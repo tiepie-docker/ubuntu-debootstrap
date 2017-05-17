@@ -28,6 +28,13 @@ shift $((OPTIND-1))
 
 [ "$1" = "--" ] && shift
 
+INCLUDE_FILES=(packages/all.txt packages/${SUITE}-all.txt packages/all-${ARCH}.txt packages/${SUITE}-${ARCH}.txt)
+for include_file in ${INCLUDE_FILES[@]}; do
+    if [ -s ${include_file} ]; then
+        INCLUDE+=,$(sed ':a;N;$!ba;s/\n/,/g' ${include_file})
+    fi
+done
+
 dir="$VERSION"
 COMPONENTS="main,universe"
 VARIANT="minbase"
