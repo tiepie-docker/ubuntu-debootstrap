@@ -29,7 +29,7 @@ shift $((OPTIND-1))
 [ "$1" = "--" ] && shift
 
 dir="$VERSION"
-COMPONENTS="main"
+COMPONENTS="main,universe"
 VARIANT="minbase"
 args=( -d "$dir" debootstrap --variant="$VARIANT" --components="$COMPONENTS" --include="$INCLUDE" --arch="$ARCH" "$SUITE" )
 
