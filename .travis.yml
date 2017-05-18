@@ -22,10 +22,9 @@ env:
         - ARCH=i386 INCLUDE=iproute2,wget QEMU_ARCH=i386 SUITE=zesty UNAME_ARCH=i386 VERSION=17.04
 
 before_script:
-    - sudo apt-get -y install debootstrap
     - echo "deb http://archive.ubuntu.com/ubuntu zesty-updates main universe" | sudo tee -a /etc/apt/sources.list
     - sudo apt-get update -qq
-    - sudo apt-get -yt zesty-updates install qemu-user-static
+    - sudo apt-get -yt zesty-updates install qemu-user-static debootstrap
 script:
     - sudo ./update.sh -a "$ARCH" -v "$VERSION" -q "$QEMU_ARCH" -u "$QEMU_VER" -d "$DOCKER_REPO" -s "$SUITE" -i "$INCLUDE" -o "$UNAME_ARCH"
 after_success:
