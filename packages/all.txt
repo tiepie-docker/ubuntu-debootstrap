@@ -10,3 +10,4 @@ rsync
 zlib1g-dev
 php-cli
 git
+lsb-release
