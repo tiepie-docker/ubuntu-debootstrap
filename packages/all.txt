@@ -10,4 +10,5 @@ rsync
 zlib1g-dev
 php-cli
 git
+python3
 lsb-release
