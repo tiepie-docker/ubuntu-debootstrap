@@ -3,6 +3,7 @@ python
 python-colorama
 python-pep8
 g++
+libfl-dev
 flex
 bison
 openssh-client
