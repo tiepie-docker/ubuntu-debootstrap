@@ -44,6 +44,8 @@ mkdir -p mkimage $dir
 curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage.sh > mkimage.sh
 curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage/debootstrap > mkimage/debootstrap
 chmod +x mkimage.sh mkimage/debootstrap
+patch -f mkimage.sh < patch/mkimage.patch
+if [ "$?" != 0 ]; then exit 1; fi
 
 mkimage="$(readlink -f "${MKIMAGE:-"mkimage.sh"}")"
 {

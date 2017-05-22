@@ -1,0 +1,11 @@
+--- mkimage.sh.old	2017-05-22 10:59:47.331988385 +0200
++++ mkimage.sh	2017-05-22 11:01:21.931980883 +0200
+@@ -97,7 +97,7 @@
+ 
+ (
+ 	set -x
+-	tar --numeric-owner --create --auto-compress --file "$tarFile" --directory "$rootfsDir" --transform='s,^./,,' .
++	tar --checkpoint=.60 --numeric-owner --create --auto-compress --file "$tarFile" --directory "$rootfsDir" --transform='s,^./,,' .
+ )
+ 
+ echo >&2 "+ cat > '$dir/Dockerfile'"
