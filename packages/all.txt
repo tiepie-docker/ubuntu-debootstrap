@@ -13,3 +13,4 @@ php-cli
 git
 python3
 lsb-release
+fakeroot
