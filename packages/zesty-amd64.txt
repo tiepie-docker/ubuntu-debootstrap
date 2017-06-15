@@ -1,2 +1,0 @@
-qt5-qmake
-qt5-default

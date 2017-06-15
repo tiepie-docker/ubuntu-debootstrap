@@ -14,3 +14,5 @@ git
 python3
 lsb-release
 fakeroot
+qt5-qmake
+qt5-default
