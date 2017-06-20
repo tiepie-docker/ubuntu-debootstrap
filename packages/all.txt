@@ -16,3 +16,6 @@ lsb-release
 fakeroot
 qt5-qmake
 qt5-default
+liblua5.3-0
+libreadline-dev
+liblua5.3-dev
