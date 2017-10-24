@@ -2,6 +2,7 @@ make
 python
 python-colorama
 python-pep8
+python-numpy
 g++
 libfl-dev
 flex
