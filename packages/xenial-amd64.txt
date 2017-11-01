@@ -2,3 +2,4 @@ pep8
 mingw-w64
 doxygen
 graphviz
+cppcheck
