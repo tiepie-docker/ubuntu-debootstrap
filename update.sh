@@ -78,6 +78,14 @@ RUN if [ ! -s /etc/apt/sources.list ]; then \
     fi
 EOF
 
+if [ "$SUITE" = "xenial" ] && [ "$ARCH" = "amd64" ]; then
+    cat >> "${dir}/Dockerfile" <<EOF
+RUN wget -nv --content-disposition https://packagecloud.io/github/git-lfs/packages/ubuntu/xenial/git-lfs_2.3.4_amd64.deb/download.deb && \
+    dpkg -i git-lfs_2.3.4_amd64.deb && \
+    rm git-lfs_2.3.4_amd64.deb
+EOF
+fi
+
 if [ "$DOCKER_REPO" ]; then
     docker build -t "${DOCKER_REPO}:${ARCH}-${SUITE}-slim" "${dir}"
     mkdir -p "${dir}/full"
