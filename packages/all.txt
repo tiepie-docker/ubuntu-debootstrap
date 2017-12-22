@@ -24,3 +24,4 @@ libfftw3-dev
 cmake
 clang
 clang-tidy
+gnupg
