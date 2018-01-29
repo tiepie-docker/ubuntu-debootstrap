@@ -3,3 +3,4 @@ mingw-w64
 doxygen
 graphviz
 cppcheck
+python-markdown
