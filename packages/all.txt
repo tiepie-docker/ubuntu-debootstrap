@@ -18,6 +18,7 @@ fakeroot
 qt5-qmake
 qt5-default
 libqt5help5
+libqt5sql5-sqlite
 qttools5-dev-tools
 liblua5.3-0
 libreadline-dev
