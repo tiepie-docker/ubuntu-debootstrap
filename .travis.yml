@@ -11,11 +11,6 @@ env:
         - ARCH=armhf INCLUDE=iproute2,wget QEMU_ARCH=arm SUITE=xenial UNAME_ARCH=armv7l VERSION=16.04
         - ARCH=i386 INCLUDE=iproute2,wget QEMU_ARCH=i386 SUITE=xenial UNAME_ARCH=i386 VERSION=16.04
 
-        - ARCH=amd64 INCLUDE=iproute2,wget QEMU_ARCH=x86_64 SUITE=zesty UNAME_ARCH=x86_64 VERSION=17.04
-        - ARCH=arm64 INCLUDE=iproute2,wget QEMU_ARCH=aarch64 SUITE=zesty UNAME_ARCH=arm64 VERSION=17.04
-        - ARCH=armhf INCLUDE=iproute2,wget QEMU_ARCH=arm SUITE=zesty UNAME_ARCH=armv7l VERSION=17.04
-        - ARCH=i386 INCLUDE=iproute2,wget QEMU_ARCH=i386 SUITE=zesty UNAME_ARCH=i386 VERSION=17.04
-
         - ARCH=amd64 INCLUDE=iproute2,wget QEMU_ARCH=x86_64 SUITE=artful UNAME_ARCH=x86_64 VERSION=17.10
         - ARCH=arm64 INCLUDE=iproute2,wget QEMU_ARCH=aarch64 SUITE=artful UNAME_ARCH=arm64 VERSION=17.10
         - ARCH=armhf INCLUDE=iproute2,wget QEMU_ARCH=arm SUITE=artful UNAME_ARCH=armv7l VERSION=17.10
