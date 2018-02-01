@@ -4,3 +4,4 @@ doxygen
 graphviz
 cppcheck
 python-markdown
+qttools5-dev-tools
